@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyBullet : MonoBehaviour
+{
+    // Start is called before the first frame update
+    private Vector3 movementDirection;
+    void Start()
+    {
+        Destroy(gameObject,5f);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (movementDirection == Vector3.zero) 
+            return;
+            transform.position += movementDirection * Time.deltaTime;
+        
+    }
+    public void SetMovementDirection(Vector3 direction)
+    {
+        movementDirection = direction;
+    }
+}
